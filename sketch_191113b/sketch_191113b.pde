@@ -11,35 +11,51 @@ class Walker {
   }
   
   void display() {
+    
     stroke(0);
     point(x, y);
+    
   }
   
-  void step(){
-    
+  void step() {
+  
     int choice = int(random(4));
     
     if (choice == 0) {
-      x++;
+    
+      x ++;
+      
     } else if (choice == 1) {
-      x--;
+    
+      x --;
+      
     } else if (choice == 2) {
-      y++;
+    
+      y ++;
+      
     } else if (choice == 3) {
-      y--;
-    }
+    
+      y --;
+      
+    }    
+    
   }
+  
 }
 
 Walker w;
 
 void setup() {
+  
   size(400, 400);
   w = new Walker();
-  background(255);  
+  background(255);
+  
 }
 
 void draw() {
-  w.display();
+
   w.step();
+  w.display();
+  
 }
