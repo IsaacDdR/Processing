@@ -4,8 +4,10 @@ class Walker {
   int y;
   
   Walker() {
+    
     x = width/2;
     y = width/2;
+    
   }
   
   void display() {
@@ -13,30 +15,31 @@ class Walker {
     point(x, y);
   }
   
-  void step() {
+  void step(){
+    
     int choice = int(random(4));
     
-    if (choice == 1) {
+    if (choice == 0) {
       x++;
-    } else if (choice == 2) {
+    } else if (choice == 1) {
       x--;
-    } else if (choice == 3) {
+    } else if (choice == 2) {
       y++;
-    } else {
+    } else if (choice == 3) {
       y--;
-    }   
+    }
   }
 }
 
 Walker w;
 
-void setup(){
-  size(600, 400);
+void setup() {
+  size(400, 400);
   w = new Walker();
-  background(255);
+  background(255);  
 }
 
 void draw() {
   w.display();
-  w.step();  
+  w.step();
 }
