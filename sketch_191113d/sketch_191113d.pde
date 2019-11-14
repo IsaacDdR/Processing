@@ -1,42 +1,39 @@
 class Walker {
   
   int x;
-  int y;
+  int y;  
   
   Walker() {
-    
+  
     x = width/2;
     y = width/2;
-    
+  
   }
   
   void display() {
-    
+  
     stroke(0);
     point(x, y);
-    
+  
   }
   
-  void step() {  
+  void step() {
+  
+    int xstep = int(random( 2 ));
+    int ystep = int(random( 2 ));
     
-   //int stepx = int(random(3))-1;
-   //int stepy = int(random(3))-1;
-   
-   float stepx = random(-1, 1);
-   float stepy = random(-1, 1);
-   
-   x += stepx;
-   y += stepy; 
+    x += xstep;
+    y += ystep;
     
   }
-  
+    
 }
 
 Walker w;
 
 void setup() {
   
-  size(400, 400);
+  size(640, 640);
   w = new Walker();
   background(255);
   
@@ -46,5 +43,5 @@ void draw() {
 
   w.step();
   w.display();
-  
+
 }
